@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-userscript-metablock-basic-example",
+  "name": "vite-metablock-basic-example",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

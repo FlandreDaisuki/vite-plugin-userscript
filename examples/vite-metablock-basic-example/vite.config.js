@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { metablock } from '../..';
 
-const name = 'vite-plugin-userscript-metablock-basic-example';
+const name = 'vite-metablock-basic-example';
 
 export default defineConfig({
   plugins: [
