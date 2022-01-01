@@ -5,16 +5,28 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
+    "test": "npx jest",
     "dev": "npm run build -- --watch",
     "build": "tsup",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.4.0",
+    "@types/js-yaml": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
+    "jest": "^27.4.5",
+    "jest-extended": "^1.2.0",
+    "ts-jest": "^27.1.2",
     "tsup": "^5.11.9",
     "typescript": "^4.5.4",
     "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "js-yaml": "^4.1.0",
+    "json5": "^2.2.0"
   }
 }
