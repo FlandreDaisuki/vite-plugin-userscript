@@ -4,6 +4,7 @@ module.exports = {
     node: true,
     commonjs: true,
     es6: true,
+    jest: true,
   },
   parser: '@typescript-eslint/parser',
   plugins: [
@@ -36,13 +37,4 @@ module.exports = {
     'space-infix-ops': 'error',
     'template-curly-spacing': 'error',
   },
-  overrides: [{
-    files: [
-      '**/__tests__/*.{j,t}s?(x)',
-      '/**/*.spec.{j,t}s?(x)',
-    ],
-    env: {
-      jest: true,
-    },
-  }],
 };
