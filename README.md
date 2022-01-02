@@ -12,7 +12,7 @@ npm i -D vite-plugin-userscript
 import { defineConfig } from 'vite';
 import { metablock } from 'vite-plugin-userscript';
 
-export default () => defineConfig({
+export default defineConfig({
   plugins: [
     metablock(),
   ],
