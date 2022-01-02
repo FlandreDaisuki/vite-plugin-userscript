@@ -162,7 +162,7 @@ export default (options: MetablockPluginOption = {}): Plugin => {
       //   there are some magic remove comments after renderChunk
       // ref: https://rollupjs.org/guide/en/#output-generation-hooks
       // ref: https://rollupjs.org/guide/en/#generatebundle
-      async generateBundle(_, bundle) {
+      async generateBundle(outputOptions, bundle) {
         for (const outputChunk of Object.values(bundle)) {
           if (outputChunk.type === 'asset') { continue; }
 
@@ -175,10 +175,13 @@ export default (options: MetablockPluginOption = {}): Plugin => {
 
           const metablockOutput = renderMetaEntries(metablockEntries);
 
-          outputChunk.code = [
-            metablockOutput,
-            code,
-          ].join('\n');
+          const prepend = metablockOutput + '\n';
+          const prependLineCount = [...prepend.matchAll(/\n/g)]?.length ?? 0;
+          outputChunk.code = prepend + code;
+
+          if (outputChunk.map) {
+            outputChunk.map.mappings = ';'.repeat(prependLineCount) + outputChunk.map.mappings;
+          }
         }
       },
     };

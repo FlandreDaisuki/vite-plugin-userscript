@@ -10,6 +10,7 @@ export default defineConfig({
   output: {
     file: 'dist/out.user.js',
     format: 'umd',
+    sourcemap: true,
   },
   plugins: [
     nodeResolve(),

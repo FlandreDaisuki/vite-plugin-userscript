@@ -14,7 +14,6 @@ interface MetablockPluginOption {
 
   // output options
   applyTo?: OutputApplyPattern | OutputApplyPattern[];
-  sourcemap?: boolean;
 }
 
 interface TransformConfig {
