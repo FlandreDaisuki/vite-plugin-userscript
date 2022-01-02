@@ -5,6 +5,12 @@
   "cSpell.words": [
     "metablock",
     "pluginutils",
-    "tsup"
+    "tsup",
+    "violentmonkey"
+  ],
+  "cSpell.ignoreWords": [
+    "antifeature",
+    "defaulticon",
+    "nocompat"
   ]
 }

@@ -54,3 +54,11 @@ export const isIPv4 = (value: unknown) => {
   }
   return false;
 };
+
+export const isValidConnectMetaValue = (value: unknown) => {
+  return isIPv4(value) ||
+    isUri(String(value)) ||
+    /[\w-]+(\.[\w-]+)+/.test(String(value)) || // domain without protocol
+    value === '*' ||
+    value === 'localhost';
+};

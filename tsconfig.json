@@ -9,5 +9,8 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "useUnknownInCatchVariables": false,
+  },
+  "paths": {
+    "*": ["*.d.ts"]
   }
 }

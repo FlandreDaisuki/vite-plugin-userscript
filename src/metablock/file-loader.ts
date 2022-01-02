@@ -25,8 +25,11 @@ const loadYAML = async(filepath: string) => {
   }
 };
 
-export const loadMetaFile = async(filename: string) => {
-  const filepath = path.resolve(filename);
+/**
+ * @param {string?} filename - default: './metablock.json'
+ */
+export const loadMetaFile = async(filename?: string | null) => {
+  const filepath = path.resolve(filename ?? './metablock.json');
   const ext = path.extname(filepath);
   switch (ext) {
   case '.json':
