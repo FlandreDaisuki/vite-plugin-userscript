@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-userscript",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -32,5 +32,20 @@
     "json5": "^2.2.0",
     "semver": "^7.3.5",
     "valid-url": "^1.0.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlandreDaisuki/vite-plugin-userscript.git"
+  },
+  "author": "FlandreDaisuki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlandreDaisuki/vite-plugin-userscript/issues"
+  },
+  "homepage": "https://github.com/FlandreDaisuki/vite-plugin-userscript#readme",
+  "keywords": [
+    "userscript",
+    "rollup-plugin",
+    "vite-plugin"
+  ]
 }
