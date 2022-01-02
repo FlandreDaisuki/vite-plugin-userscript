@@ -1,0 +1,8 @@
+[.]*
+*.config.*
+[jt]sconfig.*
+
+*.tgz
+
+__tests__
+examples
