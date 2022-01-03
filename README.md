@@ -32,6 +32,33 @@ export default defineConfig({
 });
 ```
 
+Full options
+
+```js
+
+metablock({
+  // support json / json5 / yaml.
+  file: './metablock.json',
+
+  // show hints if you only want to write for specific script manager.
+  manager: 'all',
+
+  // dynamic override the meta from meta file
+  override: {
+    name: require('package.json').name
+  },
+
+  order: ['name', 'description', 'namespace', '...', 'grant'],
+
+  // the action when meet invalid meta
+  errorLevel: 'warn'
+
+  // append metablock to which output files
+  applyTo: /[.]user[.]js$/
+})
+
+```
+
 ## Examples
 
 See [examples](https://github.com/FlandreDaisuki/vite-plugin-userscript/tree/master/examples) folder
