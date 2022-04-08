@@ -319,34 +319,34 @@ export const INJECT_INTO_ENUM = ['page', 'content', 'auto'];
 
 export const COMPATIBLE_META_ENTRY_TRANSFORM_MAP: Record<string, TransformFn> = {
   // explicit
-  name: createMultilingual('name'),
-  namespace: createBinaryString('namespace'),
-  description: createMultilingual('description'),
-  version: createBinaryVersion('version'),
-  match: createBinaryURIMatchPatternArray('match'),
-  include: createBinaryGlobURIArray('include'),
-  exclude: createBinaryGlobURIArray('exclude'),
-  icon: createBinaryURI('icon'),
-  require: createBinaryURIArray('require'),
+  'name': createMultilingual('name'),
+  'namespace': createBinaryString('namespace'),
+  'description': createMultilingual('description'),
+  'version': createBinaryVersion('version'),
+  'match': createBinaryURIMatchPatternArray('match'),
+  'include': createBinaryGlobURIArray('include'),
+  'exclude': createBinaryGlobURIArray('exclude'),
+  'icon': createBinaryURI('icon'),
+  'require': createBinaryURIArray('require'),
   'run-at': createBinaryEnum('run-at', RUN_AT_ENUM),
-  resource: createTernaryURI('resource'),
-  noframes: createUnary('noframes'),
-  grant: createGrant('grant'),
+  'resource': createTernaryURI('resource'),
+  'noframes': createUnary('noframes'),
+  'grant': createGrant('grant'),
 
   // implicit
-  author: createBinaryString('author'),
+  'author': createBinaryString('author'),
 
   // Greasy Fork
-  updateURL: createBinaryURI('updateURL'),
-  installURL: createBinaryURI('installURL'),
-  downloadURL: createBinaryURI('downloadURL'),
-  license: createBinaryString('license'),
-  supportURL: createBinaryURI('supportURL'),
-  contributionURL: createBinaryURI('contributionURL'),
-  contributionAmount: createBinaryString('contributionAmount'),
-  compatible: createBinaryStringArray('compatible'),
-  incompatible: createBinaryStringArray('incompatible'),
-  antifeature: createMultilingual('antifeature'),
+  'updateURL': createBinaryURI('updateURL'),
+  'installURL': createBinaryURI('installURL'),
+  'downloadURL': createBinaryURI('downloadURL'),
+  'license': createBinaryString('license'),
+  'supportURL': createBinaryURI('supportURL'),
+  'contributionURL': createBinaryURI('contributionURL'),
+  'contributionAmount': createBinaryString('contributionAmount'),
+  'compatible': createBinaryStringArray('compatible'),
+  'incompatible': createBinaryStringArray('incompatible'),
+  'antifeature': createMultilingual('antifeature'),
 };
 
 export const COMPATIBLE_META_KEYS = Object.keys(COMPATIBLE_META_ENTRY_TRANSFORM_MAP);

@@ -19,7 +19,7 @@ const hasOwnProperty = Object.prototype.hasOwnProperty;
  * ref: https://lodash.com/docs/4.17.15#isPlainObject
  */
 export const isPlainObject = (value: unknown) => {
-  if (!isObjectLike(value) || String(value) != '[object Object]') {
+  if (!isObjectLike(value) || String(value) !== '[object Object]') {
     return false;
   }
   const proto = getPrototype(value);
@@ -27,8 +27,8 @@ export const isPlainObject = (value: unknown) => {
     return true;
   }
   const Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
-      Function.prototype.toString.call(Ctor) == Function.prototype.toString.call(Object);
+  return typeof Ctor == 'function' && Ctor instanceof Ctor
+      && Function.prototype.toString.call(Ctor) === Function.prototype.toString.call(Object);
 };
 
 /**
@@ -56,9 +56,9 @@ export const isIPv4 = (value: unknown) => {
 };
 
 export const isValidConnectMetaValue = (value: unknown) => {
-  return isIPv4(value) ||
-    isUri(String(value)) ||
-    /[\w-]+(\.[\w-]+)+/.test(String(value)) || // domain without protocol
-    value === '*' ||
-    value === 'localhost';
+  return isIPv4(value)
+    || isUri(String(value))
+    || /[\w-]+(\.[\w-]+)+/.test(String(value)) // domain without protocol
+    || value === '*'
+    || value === 'localhost';
 };

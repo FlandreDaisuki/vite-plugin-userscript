@@ -3,7 +3,7 @@
 ## Get Started
 
 ```sh
-npm i -D vite-plugin-userscript
+pnpm i -D vite-plugin-userscript
 ```
 
 ```js

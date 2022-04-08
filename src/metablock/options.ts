@@ -16,61 +16,61 @@ const toScriptManagerEnum = (name: unknown) => {
   const managerName = String(name ?? 'all').toLowerCase().trim();
 
   switch (managerName) {
-  case 'tm':
-  case 'tampermonkey': {
-    return ScriptManager.Tampermonkey;
-  }
-  case 'gm3':
-  case 'greasemonkey3': {
-    return ScriptManager.Greasemonkey;
-  }
-  case 'gm':
-  case 'gm4':
-  case 'greasemonkey':
-  case 'greasemonkey4': {
-    return ScriptManager.Greasemonkey4;
-  }
-  case 'vm':
-  case 'violentmonkey': {
-    return ScriptManager.Violentmonkey;
-  }
-  case 'compatible': {
-    return ScriptManager.Compatible;
-  }
-  case 'all': {
-    return ScriptManager.All;
-  }
-  default:
-    throw new UnknownScriptManager(`Unknown script manager: ${managerName}`);
+    case 'tm':
+    case 'tampermonkey': {
+      return ScriptManager.Tampermonkey;
+    }
+    case 'gm3':
+    case 'greasemonkey3': {
+      return ScriptManager.Greasemonkey;
+    }
+    case 'gm':
+    case 'gm4':
+    case 'greasemonkey':
+    case 'greasemonkey4': {
+      return ScriptManager.Greasemonkey4;
+    }
+    case 'vm':
+    case 'violentmonkey': {
+      return ScriptManager.Violentmonkey;
+    }
+    case 'compatible': {
+      return ScriptManager.Compatible;
+    }
+    case 'all': {
+      return ScriptManager.All;
+    }
+    default:
+      throw new UnknownScriptManager(`Unknown script manager: ${managerName}`);
   }
 };
 
 const getSupportedMetaKeysByScriptManager = (manager: ScriptManager) => {
   switch (manager) {
-  case ScriptManager.Tampermonkey:{
-    return [
-      ...COMPATIBLE_META_KEYS,
-      ...TAMPERMONKEY_EXCLUSIVE_META_KEYS,
-    ];
-  }
-  case ScriptManager.Greasemonkey:
-  case ScriptManager.Greasemonkey4: {
-    return [...COMPATIBLE_META_KEYS];
-  }
-  case ScriptManager.Violentmonkey: {
-    return [
-      ...COMPATIBLE_META_KEYS,
-      ...VIOLENTMONKEY_EXCLUSIVE_META_KEYS,
-    ];
-  }
-  case ScriptManager.Compatible: {
-    return [...COMPATIBLE_META_KEYS];
-  }
-  case ScriptManager.All: {
-    return [...ALL_META_KEYS];
-  }
-  default:
-    return [];
+    case ScriptManager.Tampermonkey:{
+      return [
+        ...COMPATIBLE_META_KEYS,
+        ...TAMPERMONKEY_EXCLUSIVE_META_KEYS,
+      ];
+    }
+    case ScriptManager.Greasemonkey:
+    case ScriptManager.Greasemonkey4: {
+      return [...COMPATIBLE_META_KEYS];
+    }
+    case ScriptManager.Violentmonkey: {
+      return [
+        ...COMPATIBLE_META_KEYS,
+        ...VIOLENTMONKEY_EXCLUSIVE_META_KEYS,
+      ];
+    }
+    case ScriptManager.Compatible: {
+      return [...COMPATIBLE_META_KEYS];
+    }
+    case ScriptManager.All: {
+      return [...ALL_META_KEYS];
+    }
+    default:
+      return [];
   }
 };
 
@@ -103,7 +103,7 @@ export const parsePluginOptions = (options?: MetablockPluginOption) => {
   const supportedMetaKeys = unique(
     managers
       .map(toScriptManagerEnum)
-      .flatMap(getSupportedMetaKeysByScriptManager)
+      .flatMap(getSupportedMetaKeysByScriptManager),
   );
 
   const errorLevel = opt?.errorLevel ?? 'warn';

@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 import YAML from 'js-yaml';
 import JSON5 from 'json5';
 import { UnsupportedFormat } from './error';
@@ -32,14 +32,14 @@ export const loadMetaFile = async(filename?: string | null) => {
   const filepath = path.resolve(filename ?? './metablock.json');
   const ext = path.extname(filepath);
   switch (ext) {
-  case '.json':
-  case '.json5':
-    return loadJSON(filepath);
-  case '.yaml':
-  case '.yml':
-    return loadYAML(filepath);
-  default:
-    throw new UnsupportedFormat(`Do not support ${ext} now.`);
+    case '.json':
+    case '.json5':
+      return loadJSON(filepath);
+    case '.yaml':
+    case '.yml':
+      return loadYAML(filepath);
+    default:
+      throw new UnsupportedFormat(`Do not support ${ext} now.`);
   }
 };
 

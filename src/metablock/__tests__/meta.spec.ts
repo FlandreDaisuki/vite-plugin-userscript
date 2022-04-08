@@ -1,4 +1,6 @@
 import {
+  createBinaryConnectPattern,
+  createBinaryConnectPatternArray,
   createBinaryEnum,
   createBinaryGlobURI,
   createBinaryGlobURIArray,
@@ -6,15 +8,13 @@ import {
   createBinaryStringArray,
   createBinaryURI,
   createBinaryURIArray,
+  createBinaryURIMatchPattern,
+  createBinaryURIMatchPatternArray,
   createBinaryVersion,
+  createGrant,
   createMultilingual,
   createTernaryURI,
   createUnary,
-  createBinaryConnectPattern,
-  createBinaryConnectPatternArray,
-  createBinaryURIMatchPattern,
-  createBinaryURIMatchPatternArray,
-  createGrant,
 } from '../meta';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -25,9 +25,9 @@ test('createMultilingual', () => {
   const toMultilingualEntries = multilingual(noop);
 
   const objectTypeMeta = {
-    en: 'test',
+    'en': 'test',
     'zh-TW': '測試',
-    default: 'test',
+    'default': 'test',
   };
 
   expect(toMultilingualEntries('test')).toStrictEqual([

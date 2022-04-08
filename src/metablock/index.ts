@@ -175,7 +175,7 @@ export default (options: MetablockPluginOption = {}): Plugin => {
 
           const metablockOutput = renderMetaEntries(metablockEntries);
 
-          const prepend = metablockOutput + '\n';
+          const prepend = `${metablockOutput}\n`;
           const prependLineCount = [...prepend.matchAll(/\n/g)]?.length ?? 0;
           outputChunk.code = prepend + code;
 

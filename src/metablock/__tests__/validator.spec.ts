@@ -1,4 +1,4 @@
-import { isURI, isPlainObject, isURIMatchPattern, isGlobURI, isIPv4 } from '../validator';
+import { isGlobURI, isIPv4, isPlainObject, isURI, isURIMatchPattern } from '../validator';
 
 test('isURI', () => {
   expect(isURI('https://example.com')).toBe(true);
@@ -37,18 +37,18 @@ test('isURIMatchPattern', () => {
 });
 
 test('isGlobURI', () => {
-  expect(isGlobURI('*',)).toBe(true);
-  expect(isGlobURI('foo://*',)).toBe(true);
-  expect(isGlobURI('http:/bar',)).toBe(true);
-  expect(isGlobURI('http://*/*',)).toBe(true);
-  expect(isGlobURI('file:///foo*',)).toBe(true);
-  expect(isGlobURI('http://*/foo*',)).toBe(true);
-  expect(isGlobURI('http://*foo/bar',)).toBe(true);
-  expect(isGlobURI('http://foo.*.bar/baz',)).toBe(true);
+  expect(isGlobURI('*')).toBe(true);
+  expect(isGlobURI('foo://*')).toBe(true);
+  expect(isGlobURI('http:/bar')).toBe(true);
+  expect(isGlobURI('http://*/*')).toBe(true);
+  expect(isGlobURI('file:///foo*')).toBe(true);
+  expect(isGlobURI('http://*/foo*')).toBe(true);
+  expect(isGlobURI('http://*foo/bar')).toBe(true);
+  expect(isGlobURI('http://foo.*.bar/baz')).toBe(true);
   expect(isGlobURI('*://mail.google.com/*')).toBe(true);
-  expect(isGlobURI('http://www.google.com',)).toBe(true);
-  expect(isGlobURI('https://*.google.com/foo*bar',)).toBe(true);
-  expect(isGlobURI('http://example.org/foo/bar.html',)).toBe(true);
+  expect(isGlobURI('http://www.google.com')).toBe(true);
+  expect(isGlobURI('https://*.google.com/foo*bar')).toBe(true);
+  expect(isGlobURI('http://example.org/foo/bar.html')).toBe(true);
 
   expect(isGlobURI(' ')).toBe(false);
   expect(isGlobURI(null)).toBe(false);
